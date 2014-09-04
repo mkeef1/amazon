@@ -1,0 +1,32 @@
+extends ../shared/template
+block content
+  table#products.table.table-striped.table-hover
+    thead
+      tr
+        th Name
+        th Photo
+        th Price
+        th Count
+        th Total
+    tbody
+      each id in ids
+        tr
+          td= products[id].p.name
+          td(style='background-image:url("#{products[id].p.photo}")')
+          td $#{products[id].p.price.toFixed(2)}
+          td= products[id].c
+          td= '$' + subtotal.toFixed(2)
+      tr
+        td
+        td
+        td
+        td Tax
+        td= '$' + tax.toFixed(2)
+    tfoot
+      tr
+        td
+        td
+        td
+        td Total
+        td= '$' + total.toFixed(2)
+block scripts
