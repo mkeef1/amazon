@@ -26,4 +26,9 @@ config.facebook = {
   callbackUrl : 'http://matt-vm.com:3333/auth/facebook/callback'
 };
 
+config.stripe = {
+  publishKey : 'pk_test_w7Z1US0NscSQyYDobUEn8s5M',
+  secretKey: process.env.STRIPE_SECRET
+};
+
 module.exports = config;
